@@ -1,4 +1,4 @@
-*Team 2 Android App*
+*HealthyBites*
 Original App Design Project - README Template
 ===
 
