@@ -12,10 +12,9 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-[Description of your app]
+Our app will help our users by making it easier to become more informed on topics like nutrition and preparing meals that improves their well being.
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
 - **Category:** Nutrition
 - **Mobile:** For the time being, this application is mobile only.
 - **Story:** Recipies, Favorites 
