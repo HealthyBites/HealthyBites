@@ -82,10 +82,6 @@ Scope: This app aims to become global! Being able to search and find events from
 ## Wireframes
 <img src="HealthyBites_Wireframe.png" width=600>
 
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
-
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
