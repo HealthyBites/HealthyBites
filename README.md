@@ -66,16 +66,16 @@ Scope: This app aims to become global! Being able to search and find events from
 
 **Tab Navigation** (Tab to Screen)
 
-* Stream
-* Creation
-* Detail
+* Home
+* Favorites
+* Profile
 
 **Flow Navigation** (Screen to Screen)
 * Login
-  * Stream
+  * Home
 * Register
-  * Stream
-* Stream
+  * Home
+* Home
   * Detail
     * Creation 
 
