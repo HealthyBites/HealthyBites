@@ -80,8 +80,7 @@ Scope: This app aims to become global! Being able to search and find events from
     * Creation 
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="HealthyBites_Wireframe.png" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
