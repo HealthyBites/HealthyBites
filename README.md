@@ -97,7 +97,7 @@ Scope: This app aims to become global! Being able to search and find events from
    | updatedAt     | DateTime | date when post is last updated (default field) |
    
    
-   ### Favorite
+   ### Favorites
  | Property      | Type     | Description |
    | ------------- | -------- | ------------|
    | objectId      | String   | unique id for the user favorites list (default field) |
@@ -110,7 +110,7 @@ Scope: This app aims to become global! Being able to search and find events from
    | updatedAt     | DateTime | date when post is last updated (default field) |
    
    
-   ### User
+   ### Grocery List
  | Property      | Type     | Description |
    | ------------- | -------- | ------------|
    | objectId      | String   | unique id for the user grocery list (default field) |
