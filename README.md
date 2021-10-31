@@ -86,11 +86,26 @@ Scope: This app aims to become global! Being able to search and find events from
 ### User
  | Property      | Type     | Description |
    | ------------- | -------- | ------------|
-   | objectId      | String   | unique id for the user post (default field) |
-   | name          | String   | name of the user |
-   | caption       | String   | image caption by author |
-   | commentsCount | Number   | number of comments that has been posted to an image |
-   | likesCount    | Number   | number of likes for the post |
+   | objectId      | String   | unique id for the user (default field) |
+   | username      | String   | name of the user |
+   | password      | String   | password for login |
+   | email         | Number   | email for account signup |
+   | age           | Number   | age of user |
+   | height        | Number   | height of the user |
+   | weight        | Number   | weight of user |
+   | createdAt     | DateTime | date when post is created (default field) |
+   | updatedAt     | DateTime | date when post is last updated (default field) |
+   
+   
+   ### Favorite
+ | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId      | String   | unique id for the user favorites list (default field) |
+   | userId        | Pointer to User| favorites list owner |
+   | nameRecipe    | String   | name of the saved recipe |
+   | image         | File     | image of the saved recipe|
+   | description   | String   | description of the recipe |
+   | ingredients   | String   | list of recipe ingredients |
    | createdAt     | DateTime | date when post is created (default field) |
    | updatedAt     | DateTime | date when post is last updated (default field) |
    
@@ -98,25 +113,10 @@ Scope: This app aims to become global! Being able to search and find events from
    ### User
  | Property      | Type     | Description |
    | ------------- | -------- | ------------|
-   | objectId      | String   | unique id for the user post (default field) |
-   | author        | Pointer to User| image author |
-   | image         | File     | image that user posts |
-   | caption       | String   | image caption by author |
-   | commentsCount | Number   | number of comments that has been posted to an image |
-   | likesCount    | Number   | number of likes for the post |
-   | createdAt     | DateTime | date when post is created (default field) |
-   | updatedAt     | DateTime | date when post is last updated (default field) |
-   
-   
-   ### User
- | Property      | Type     | Description |
-   | ------------- | -------- | ------------|
-   | objectId      | String   | unique id for the user post (default field) |
-   | author        | Pointer to User| image author |
-   | image         | File     | image that user posts |
-   | caption       | String   | image caption by author |
-   | commentsCount | Number   | number of comments that has been posted to an image |
-   | likesCount    | Number   | number of likes for the post |
+   | objectId      | String   | unique id for the user grocery list (default field) |
+   | userId        | Pointer to User| grocery list owner |
+   | ingredient    | String   | ingredient added by user |
+   | quantity      | Number   | amount of ingredients |
    | createdAt     | DateTime | date when post is created (default field) |
    | updatedAt     | DateTime | date when post is last updated (default field) |
    
