@@ -89,7 +89,7 @@ Scope: This app aims to become global! Being able to search and find events from
    | objectId      | String   | unique id for the user (default field) |
    | username      | String   | name of the user |
    | password      | String   | password for login |
-   | email         | Number   | email for account signup |
+   | email         | String   | email for account signup |
    | age           | Number   | age of user |
    | height        | Number   | height of the user |
    | weight        | Number   | weight of user |
