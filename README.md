@@ -123,51 +123,38 @@ Scope: This app aims to become global! Being able to search and find events from
 ### Networking
 #### List of network requests by screen
    - Home Feed Screen
-      - (Read/GET) Query all posts where user is author
+      - (Read/GET) Query 10 random recipies.
 
          ```JAVA
         OkHttpClient client = new OkHttpClient();
-	    MediaType mediaType = MediaType.parse("application/json");
-		RequestBody body = RequestBody.create(mediaType, "{\r\n    \"plu_code\": \"\",\r\n    \"title\": \"Kroger Vitamin A & D Reduced Fat 2% Milk\",\r\n    \"upc\": \"\"\r\n}");
+
 		Request request = new Request.Builder()
-		.url("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/classify?locale=en_us")
-		.post(body)
-		.addHeader("content-type", "application/json")
+		.url("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=10")
+		.get()
 		.addHeader("x-rapidapi-host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
 		.addHeader("x-rapidapi-key", "856832bf48msh783ac55978b7517p16fe50jsn043078a575d9")
 		.build();
+
 		Response response = client.newCall(request).execute();
          ```
 	 
-   - (Create/POST) Create a new like on a post
-   - (Delete) Delete existing like
-   - (Create/POST) Create a new comment on a post
-   - (Delete) Delete existing comment
-   - Create Post Screen
-      - (Create/POST) Create a new post object
-   - Profile Screen
-      - (Read/GET) Query logged in user object
-      - (Update/PUT) Update user profile image
+  	 - (Create/POST) Add recipie to Favorites
+   	 - (Create/POST) Add ingredietns to grocery list.
+   	 - (Delete) Delete recipie from favorites.
+  - Favorites Screen
+     - (Read/GET) Query all favorites by the user.
+     - (Delete) Delete recipie from favorites.
+  - Grocery List Screen
+     - (Read/GET) Query all ingredients.
+     - (Create/POST) Add ingredients to the list.
+     - (Delete) Delete ingredients from the list.
+     - (Update/PUT) Update amount per ingredient in the list.
 #### [OPTIONAL:] Existing API Endpoints
-##### An API Of Ice And Fire
-- Base URL - [http://www.anapioficeandfire.com/api](http://www.anapioficeandfire.com/api)
+##### A Recipe - Food - Nutrition API
+- Base URL - [https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/](https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/)
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
-    `GET`    | /characters | get all characters
-    `GET`    | /characters/?name=name | return specific character by name
-    `GET`    | /houses   | get all houses
-    `GET`    | /houses/?name=name | return specific house by name
-
-##### Game of Thrones API
-- Base URL - [https://api.got.show/api](https://api.got.show/api)
-
-   HTTP Verb | Endpoint | Description
-   ----------|----------|------------
-    `GET`    | /cities | gets all cities
-    `GET`    | /cities/byId/:id | gets specific city by :id
-    `GET`    | /continents | gets all continents
-    `GET`    | /continents/byId/:id | gets specific continent by :id
-    `GET`    | /regions | gets all regions
-    `GET`    | /regions/byId/:id | gets specific region by :id
-    `GET`    | /characters/paths/:name | gets a character's path with a given name
+    `GET`    | recipes/random?number=10 | Get 10 random meal recipies
+    `GET`    | /recipes/479101/information | Get information of a specific recipie id
+    `GET`    | /recipes/1003464/ingredientWidget.json | Get ingredients list of a specific recipie id
