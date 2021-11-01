@@ -138,9 +138,9 @@ Scope: This app aims to become global! Being able to search and find events from
 		Response response = client.newCall(request).execute();
          ```
 	 
-  	 - (Create/POST) Add recipie to Favorites
-   	 - (Create/POST) Add ingredietns to grocery list.
-   	 - (Delete) Delete recipie from favorites.
+     - (Create/POST) Add recipie to Favorites
+     - (Create/POST) Add ingredietns to grocery list.
+     - (Delete) Delete recipie from favorites.
   - Favorites Screen
      - (Read/GET) Query all favorites by the user.
      - (Delete) Delete recipie from favorites.
