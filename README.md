@@ -127,9 +127,9 @@ Scope: This app aims to become global! Being able to search and find events from
          ```java
         OkHttpClient client = new OkHttpClient();
 
-MediaType mediaType = MediaType.parse("application/json");
-RequestBody body = RequestBody.create(mediaType, "{\r\n    \"plu_code\": \"\",\r\n    \"title\": \"Kroger Vitamin A & D Reduced Fat 2% Milk\",\r\n    \"upc\": \"\"\r\n}");
-Request request = new Request.Builder()
+	MediaType mediaType = MediaType.parse("application/json");
+	RequestBody body = RequestBody.create(mediaType, "{\r\n    \"plu_code\": \"\",\r\n    \"title\": \"Kroger Vitamin A & D Reduced Fat 2% Milk\",\r\n    \"upc\": \"\"\r\n}");
+	Request request = new Request.Builder()
 	.url("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/classify?locale=en_us")
 	.post(body)
 	.addHeader("content-type", "application/json")
@@ -137,7 +137,7 @@ Request request = new Request.Builder()
 	.addHeader("x-rapidapi-key", "856832bf48msh783ac55978b7517p16fe50jsn043078a575d9")
 	.build();
 
-Response response = client.newCall(request).execute();
+	Response response = client.newCall(request).execute();
          ```
       - (Create/POST) Create a new like on a post
       - (Delete) Delete existing like
