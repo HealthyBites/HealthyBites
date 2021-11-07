@@ -1,13 +1,7 @@
-package com.osmany.healthybites;
+package com.osmany.healthybites.data.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Recipie {
     @SerializedName("title")

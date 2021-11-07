@@ -1,9 +1,8 @@
-package com.osmany.healthybites;
+package com.osmany.healthybites.data.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RecipieList {
@@ -18,6 +17,7 @@ public class RecipieList {
     public void setRecipie(List<Recipie> recipe) {
         this.recipes = recipe;
     }
+
 }
 
 

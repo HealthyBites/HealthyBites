@@ -6,7 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import okhttp3.OkHttpClient;
+import com.osmany.healthybites.data.clients.RetrofitClient;
+import com.osmany.healthybites.data.models.JsonPlaceHolderApi;
+import com.osmany.healthybites.data.models.RecipieList;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -16,6 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     TextView tvTitle;
+    String baseUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tvTitle = findViewById(R.id.tvHello);
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
+        JsonPlaceHolderApi jsonPlaceHolderApi = RetrofitClient.getClient(baseUrl).create(JsonPlaceHolderApi.class);
 
         Call<RecipieList> call = jsonPlaceHolderApi.getRecipies();
         call.enqueue(new Callback<RecipieList>() {
