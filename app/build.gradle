@@ -47,6 +47,10 @@ dependencies {
     //Retrofit library for network requests
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
+    //Bottom Navagation libraries
+    implementation "androidx.appcompat:appcompat:${appCompatVersion}"
+    implementation "com.google.android.material:material:${designSupportVersion}"
+
     //Volley library for network requests
     implementation 'com.android.volley:volley:1.2.1'
 
