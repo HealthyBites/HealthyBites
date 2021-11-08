@@ -61,8 +61,8 @@
       android:layout_height="wrap_content"
       android:layout_alignParentEnd="true"
       android:layout_alignParentBottom="true"
-      android:layout_marginEnd="65dp"
-      android:layout_marginBottom="331dp"
-      android:text="Button"
-      tools:text="Log In" />
+      android:layout_centerVertical="true"
+      android:layout_marginEnd="68dp"
+      android:layout_marginBottom="265dp"
+      android:text="Log In" />
 </RelativeLayout>
