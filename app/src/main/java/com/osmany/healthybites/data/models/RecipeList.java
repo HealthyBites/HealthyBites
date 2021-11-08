@@ -5,16 +5,16 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class RecipieList {
+public class RecipeList {
     @SerializedName("recipes")
     @Expose
-    private List<Recipie> recipes = null;
+    private List<Recipe> recipes = null;
 
-    public List<Recipie> getRecipe() {
+    public List<Recipe> getRecipe() {
         return recipes;
     }
 
-    public void setRecipie(List<Recipie> recipe) {
+    public void setRecipie(List<Recipe> recipe) {
         this.recipes = recipe;
     }
 
