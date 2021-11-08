@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">HealthyBites</string>
+
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+
+    <!-- Paste BOTH strings as required -->
+    <string name="back4app_app_id">0ou4FU2EEx08px1NG3YxiirZbxbtvpWtJHbD8Npl</string>
+    <string name="back4app_client_key">wlBd4PrYq7MPbTbeDhCYopQ1M7wpCccaK8KIpU7r</string>
 </resources>

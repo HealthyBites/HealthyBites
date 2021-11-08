@@ -21,7 +21,7 @@
       tools:text="Hello" />
 
   <TextView
-      android:id="@+id/tvSigninmessage"
+      android:id="@+id/tvSignMessage"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_alignParentStart="true"
@@ -44,7 +44,7 @@
       android:inputType="textPersonName" />
 
   <EditText
-      android:id="@+id/etUserPassword"
+      android:id="@+id/etPassword"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_alignParentStart="true"
