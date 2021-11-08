@@ -45,9 +45,9 @@ Scope: This app aims to become global! Being able to search and find events from
 
 **Required Must-have Stories**
 
-* User can register for an account
-* User can log in
-* User can see different meals
+- [x] User can register for an account
+- [x] User can log in
+- [x] User can see different meals
 * User can save meals into favorites
 
 
