@@ -49,12 +49,11 @@ Scope: This app aims to become global! Being able to search and find events from
 - [x] User can log in
 - [x] User can see different meals
 * User can save meals into favorites
-
+* User can create/edit profile
+* Get detailed view of each meals which inclides recipe and information
 
 **Optional Nice-to-have Stories**
-* User can create/edit profile
 * Create/Edit favorite meals
-* Get detailed view of each meals which inclides recipie and information
 * Comparison option betweens meals
 * Display portions of ingredients depending on the person
 * Different meal uses Example:[weight-loss, muscle gain and more energy]
