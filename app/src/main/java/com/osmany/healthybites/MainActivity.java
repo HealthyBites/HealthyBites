@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.osmany.healthybites.fragments.RandomRecipiesFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -33,18 +32,17 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.action_home:
                     default:
-                        fragment = new RandomRecipiesFragment();
+                        fragment = new com.osmany.healthybites.fragments.HomeFragment();
                         break;
-//                    case R.id.action_compose:
-//                        fragment = new ComposeFragment();
-//                        break;
-//                    case R.id.action_compose:
-//                        fragment = new ComposeFragment();
-//                        break;
-//                    case R.id.action_profile:
-//                    default:
-//                        fragment = new ProfileFragment();
-//                        break;
+                      case R.id.action_search:
+                          fragment = new com.osmany.healthybites.fragments.SearchFragment();
+                          break;
+                      case R.id.action_favorite:
+                      fragment = new com.osmany.healthybites.fragments.FavoritesFragment();
+                          break;
+                      case R.id.action_profile:
+                      fragment = new com.osmany.healthybites.fragments.ProfileFragment();
+                      break;
                 }
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
                 return true;

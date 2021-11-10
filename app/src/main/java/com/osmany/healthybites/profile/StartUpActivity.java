@@ -1,4 +1,4 @@
-package com.osmany.healthybites.Profile;
+package com.osmany.healthybites.profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 

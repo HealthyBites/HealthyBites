@@ -23,12 +23,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RandomRecipiesFragment extends Fragment {
+public class HomeFragment extends Fragment {
     String baseUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/";
     RecyclerView recyclerView;
-    String TAG = "RandomRecipiesActivity";
+    String TAG = "HomeActivity";
 
-    public RandomRecipiesFragment(){
+    public HomeFragment(){
 
     }
 
