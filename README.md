@@ -14,6 +14,15 @@ Original App Design Project - README Template
 ### Description
 Our app will help our users by making it easier to become more informed on topics like nutrition and preparing meals that improves their well being.
 
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='Bite.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+
 ### App Evaluation
 - **Category:** Nutrition
 - **Mobile:** For the time being, this application is mobile only.

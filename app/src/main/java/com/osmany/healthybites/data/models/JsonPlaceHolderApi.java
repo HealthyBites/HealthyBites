@@ -10,5 +10,5 @@ public interface JsonPlaceHolderApi {
     @Headers({"x-rapidapi-host:" + BuildConfig.HOST,
             "x-rapidapi-key:" + BuildConfig.KEY})
     @GET("recipes/random?number=10")
-    Call<RecipieList> getRecipies();
+    Call<RecipeList> getRecipies();
 }
