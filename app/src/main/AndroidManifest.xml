@@ -26,16 +26,16 @@
             android:name="com.parse.CLIENT_KEY"
             android:value="@string/back4app_client_key" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".profile.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".ProfileCreationActivity"
+            android:name=".profile.ProfileCreationActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".StartUpActivity"
+            android:name=".profile.StartUpActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
