@@ -1,4 +1,4 @@
-package com.osmany.healthybites;
+package com.osmany.healthybites.Profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.osmany.healthybites.R;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
@@ -46,9 +47,6 @@ public class ProfileCreationActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
 
     private void signupUser(String username, String email,String password) {
         // Create the ParseUser
