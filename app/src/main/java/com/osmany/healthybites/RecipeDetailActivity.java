@@ -22,7 +22,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
 
-        title = findViewById(R.id.tvRecipeDescription);
+        title = findViewById(R.id.tvRecipeTitle);
         myImage = findViewById(R.id.ivRecipeImage);
         summary = findViewById(R.id.tvRecipeSummary);
 

@@ -2,10 +2,6 @@ package com.osmany.healthybites.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Movie;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,12 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.osmany.healthybites.R;
 import com.osmany.healthybites.RecipeDetailActivity;
 import com.osmany.healthybites.data.models.Recipe;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
@@ -69,21 +63,19 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
         RelativeLayout container;
-        TextView description;
+        TextView title;
         ImageView myImage;
         TextView summary;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            description = itemView.findViewById(R.id.tvRecipeDescription);
+            title = itemView.findViewById(R.id.tvRecipeTitle);
             myImage = itemView.findViewById(R.id.ivRecipeImage);
             container = itemView.findViewById(R.id.container);
-            //summary = itemView.findViewById(R.id.tvRecipeSummary);
         }
 
         public void bind(Recipe recipe) {
-            summary.setText(recipe.getSummary());
-            description.setText(recipe.getTitle());
+            title.setText(recipe.getTitle());
 
             Glide
                     .with(context)
