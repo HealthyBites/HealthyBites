@@ -12,8 +12,6 @@ import android.widget.Toast;
 
 import com.osmany.healthybites.MainActivity;
 import com.osmany.healthybites.R;
-import com.osmany.healthybites.fragments.HomeFragment;
-import com.osmany.healthybites.fragments.ProfileFragment;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -71,6 +69,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
 
     private void openMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);

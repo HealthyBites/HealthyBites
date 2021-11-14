@@ -46,6 +46,7 @@ public class StartUpActivity extends AppCompatActivity {
     private void openProfileCreationActivity() {
         Intent intent = new Intent(this, ProfileCreationActivity.class);
         startActivity(intent);
+
     }
 
     private void openLoginActivity() {
@@ -53,7 +54,7 @@ public class StartUpActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-    
+
     private void openMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
