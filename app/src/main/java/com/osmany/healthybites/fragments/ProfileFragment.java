@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.osmany.healthybites.R;
 import com.osmany.healthybites.profile.LoginActivity;
@@ -19,7 +20,7 @@ import com.parse.ParseUser;
 
 public class ProfileFragment extends Fragment {
 
-    private Button btnLogout;
+    private TextView tvLogout;
 
 
     @Override
@@ -33,8 +34,8 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        btnLogout = view.findViewById(R.id.btnLogout);
-        btnLogout.setOnClickListener(new View.OnClickListener() {
+        tvLogout = view.findViewById(R.id.tvLogout);
+        tvLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ParseUser.logOut();

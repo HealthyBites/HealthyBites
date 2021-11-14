@@ -71,4 +71,7 @@ dependencies {
 
     //Parse
     implementation "com.github.parse-community.Parse-SDK-Android:parse:1.24.1"
+
+    //Circle Image
+    implementation "com.mikhaellopez:circularimageview:4.1.1"
 }
