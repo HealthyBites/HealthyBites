@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.osmany.healthybites.MainActivity;
 import com.osmany.healthybites.R;
+import com.osmany.healthybites.fragments.HomeFragment;
+import com.osmany.healthybites.fragments.ProfileFragment;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -29,6 +31,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        if(ParseUser.getCurrentUser() != null){
+            openMainActivity();
+        }
 
         btLogin = findViewById(R.id.btLogin);
         etUsername = findViewById(R.id.etUsername);
@@ -65,7 +71,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-
 
     private void openMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
