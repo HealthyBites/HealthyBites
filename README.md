@@ -18,7 +18,7 @@ Our app will help our users by making it easier to become more informed on topic
 
 Here's a walkthrough of implemented user stories:
 
-<img src='Bite.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='Bite2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
