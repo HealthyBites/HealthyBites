@@ -59,6 +59,26 @@ public class ProfileFragment extends Fragment {
         if(currentUser != null){
             tvName.setText(currentUser.getString("username"));
             tvEmail.setText(currentUser.getEmail());
+            if(currentUser.getString("age") == null){
+                currentUser.put("age", "Add your age?");
+                tvAge.setText(currentUser.getString("age"));
+            }
+            if (currentUser.getString("height") == null){
+                currentUser.put("height", "Add your height?");
+                tvHeight.setText(currentUser.getString("height"));
+            }
+            if(currentUser.getString("weight") == null){
+                currentUser.put("weight", "Add your weight?");
+                tvWeight.setText(currentUser.getString("weight"));
+            }
+            if(currentUser.getString("diet") == null){
+                currentUser.put("diet", "Add your diet preferences?");
+                tvDiet.setText(currentUser.getString("diet"));
+            }
+                tvAge.setText(currentUser.getString("age"));
+                tvHeight.setText(currentUser.getString("height"));
+                tvWeight.setText(currentUser.getString("weight"));
+                tvDiet.setText(currentUser.getString("diet"));
         }
 
         tvLogout.setOnClickListener(new View.OnClickListener() {
