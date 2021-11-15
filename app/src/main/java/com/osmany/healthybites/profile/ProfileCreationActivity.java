@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.osmany.healthybites.MainActivity;
 import com.osmany.healthybites.R;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -44,7 +43,7 @@ public class ProfileCreationActivity extends AppCompatActivity {
                 String email = etNewEmail.getText().toString();
                 String password = etNewPassword.getText().toString();
                 signupUser(username, email ,password);
-                openMainActivity();
+                openLoginActivity(); 
             }
         });
     }
@@ -59,7 +58,7 @@ public class ProfileCreationActivity extends AppCompatActivity {
         user.signUpInBackground(new SignUpCallback() {
             public void done(ParseException e) {
                 if (e == null) {
-                    openMainActivity();
+                    openLoginActivity();
                     Toast.makeText(ProfileCreationActivity.this, "Successful Sign Up!", Toast.LENGTH_SHORT).show();
                 } else {
                     Log.e(TAG, "Issue with signup", e);
@@ -69,8 +68,8 @@ public class ProfileCreationActivity extends AppCompatActivity {
         });
     }
 
-    private void openMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
+    private void openLoginActivity() {
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
     }

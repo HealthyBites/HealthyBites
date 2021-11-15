@@ -29,7 +29,7 @@ public class HomeFragment extends Fragment {
     String TAG = "HomeActivity";
 
     public HomeFragment(){
-        // Required empty public constructor
+
     }
 
     @Override
