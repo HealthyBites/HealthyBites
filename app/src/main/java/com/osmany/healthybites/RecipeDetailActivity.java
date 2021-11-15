@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 
+import java.util.List;
+
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class RecipeDetailActivity extends AppCompatActivity {
@@ -16,6 +18,9 @@ public class RecipeDetailActivity extends AppCompatActivity {
     TextView title;
     ImageView myImage;
     TextView summary;
+    TextView ingredients;
+    List<String> ingredientList;
+    String ingredientString = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
         title = findViewById(R.id.tvRecipeTitle);
         myImage = findViewById(R.id.ivRecipeImage);
         summary = findViewById(R.id.tvRecipeSummary);
+        ingredients = findViewById(R.id.tvRecipeIngredients);
 
         title.setText(getIntent().getStringExtra("title"));
         Glide
@@ -35,5 +41,13 @@ public class RecipeDetailActivity extends AppCompatActivity {
                 .into(myImage);
 
         summary.setText(getIntent().getStringExtra("summary"));
+
+
+        ingredientList = getIntent().getStringArrayListExtra("ingredients");
+        for(int i = 0; i < ingredientList.size(); i++){
+            ingredientString+= ingredientList.get(i) + "\n";
+        }
+        ingredients.setText(ingredientString);
+
     }
 }

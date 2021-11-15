@@ -17,6 +17,7 @@ import com.osmany.healthybites.R;
 import com.osmany.healthybites.RecipeDetailActivity;
 import com.osmany.healthybites.data.models.Recipe;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
@@ -25,6 +26,7 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHolder> {
     Context context;
     List<Recipe> recipeList ;
+    ArrayList<String> ingredientList;
 
     public RecipeAdapter(Context context, List<Recipe> recipeList){
         this.context = context;
@@ -95,6 +97,11 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
                     i.putExtra("title", recipe.getTitle());
                     i.putExtra("image", recipe.getImage());
                     i.putExtra("summary", recipe.getSummary());
+                        ingredientList = new ArrayList<String>();
+                    for (int j =0; j < recipe.getExtendedIngredients().size(); j++){
+                        ingredientList.add(recipe.getExtendedIngredients().get(j).getName());
+                    }
+                    i.putStringArrayListExtra("ingredients", ingredientList);
                     //i.putExtra("movie", Parcels.wrap(movie));
                     context.startActivity(i);
                 }
