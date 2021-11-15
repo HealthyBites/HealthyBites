@@ -2,6 +2,7 @@ package com.osmany.healthybites;
 
 import android.app.Application;
 
+import com.osmany.healthybites.fragments.ProfileFragment;
 import com.parse.Parse;
 import com.parse.ParseObject;
 
