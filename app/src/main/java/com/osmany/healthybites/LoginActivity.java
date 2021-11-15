@@ -1,4 +1,4 @@
-package com.osmany.healthybites.profile;
+package com.osmany.healthybites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.osmany.healthybites.MainActivity;
-import com.osmany.healthybites.R;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;

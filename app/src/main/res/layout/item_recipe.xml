@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -20,11 +19,11 @@
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
-        android:id="@+id/tvRecipeTitle"
+        android:id="@+id/tvRecipeDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ivRecipeImage"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:textAlignment="center"
         android:textSize="24sp"
         tools:text="Description" />
