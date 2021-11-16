@@ -13,12 +13,15 @@
       android:layout_height="wrap_content"
       android:layout_alignParentStart="true"
       android:layout_alignParentTop="true"
-      android:layout_marginStart="145dp"
-      android:layout_marginTop="54dp"
-      android:textSize="34sp"
+      android:layout_centerHorizontal="true"
+      android:layout_marginStart="152dp"
+      android:layout_marginTop="148dp"
+      android:fontFamily="@font/playfairdisplaybold"
+      android:text="Hello"
+      android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+      android:textSize="40sp"
       tools:layout_editor_absoluteX="167dp"
-      tools:layout_editor_absoluteY="75dp"
-      tools:text="Hello" />
+      tools:layout_editor_absoluteY="75dp" />
 
   <TextView
       android:id="@+id/tvSignMessage"
@@ -26,10 +29,12 @@
       android:layout_height="wrap_content"
       android:layout_alignParentStart="true"
       android:layout_alignParentTop="true"
-      android:layout_marginStart="109dp"
-      android:layout_marginTop="110dp"
-      android:textSize="16sp"
-      tools:text="Sign in to your account" />
+      android:layout_centerHorizontal="true"
+      android:layout_marginStart="119dp"
+      android:layout_marginTop="210dp"
+      android:fontFamily="@font/playfairdisplayregular"
+      android:text="Sign in to your account"
+      android:textSize="16sp" />
 
   <EditText
       android:id="@+id/etUsername"
@@ -37,9 +42,11 @@
       android:layout_height="wrap_content"
       android:layout_alignParentStart="true"
       android:layout_alignParentTop="true"
-      android:layout_marginStart="82dp"
-      android:layout_marginTop="179dp"
+      android:layout_centerHorizontal="true"
+      android:layout_marginStart="81dp"
+      android:layout_marginTop="253dp"
       android:ems="10"
+      android:fontFamily="@font/playfairdisplayregular"
       android:hint="Username"
       android:inputType="textPersonName" />
 
@@ -49,20 +56,42 @@
       android:layout_height="wrap_content"
       android:layout_alignParentStart="true"
       android:layout_alignParentTop="true"
-      android:layout_marginStart="80dp"
-      android:layout_marginTop="249dp"
+      android:layout_centerHorizontal="true"
+      android:layout_marginStart="81dp"
+      android:layout_marginTop="317dp"
       android:ems="10"
+
+      android:fontFamily="@font/playfairdisplayregular"
       android:hint="Password"
       android:inputType="textPassword" />
 
   <Button
       android:id="@+id/btLogin"
-      android:layout_width="wrap_content"
+      android:layout_width="200dp"
       android:layout_height="wrap_content"
       android:layout_alignParentEnd="true"
       android:layout_alignParentBottom="true"
+      android:layout_centerInParent="true"
+      android:layout_marginEnd="106dp"
+      android:layout_marginBottom="303dp"
+      android:background="@drawable/rounded_corners"
+      android:backgroundTint="@color/cyan_dark"
+      android:fontFamily="@font/playfairdisplayblack"
+      android:text="Sign In"
+      android:textColor="@color/white"
+      android:textSize="16sp" />
+
+  <TextView
+      android:id="@+id/textView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentTop="true"
+      android:layout_alignParentEnd="true"
       android:layout_centerVertical="true"
-      android:layout_marginEnd="68dp"
-      android:layout_marginBottom="265dp"
-      android:text="Log In" />
+      android:layout_marginTop="362dp"
+      android:layout_marginEnd="94dp"
+      android:fontFamily="@font/playfairdisplayregular"
+      android:text="Forgot your password"
+      android:textAlignment="viewEnd"
+      android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 </RelativeLayout>

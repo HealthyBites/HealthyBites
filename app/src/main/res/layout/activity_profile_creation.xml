@@ -14,6 +14,7 @@
         android:layout_centerInParent="true"
         android:layout_marginBottom="314dp"
         android:ems="10"
+        android:fontFamily="@font/playfairdisplayregular"
         android:hint="New Username"
         android:inputType="textEmailAddress" />
 
@@ -24,21 +25,24 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/blackjack"
         android:text="Healthy Bites"
-        android:textSize="34sp" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="40sp" />
 
     <ImageView
         android:id="@+id/ivStartImage2"
-        android:layout_width="362dp"
-        android:layout_height="wrap_content"
+        android:layout_width="367dp"
+        android:layout_height="224dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="116dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="100dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/create_account_image" />
 
     <TextView
         android:id="@+id/tvCreateAccount"
@@ -46,19 +50,26 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="268dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="350dp"
+        android:fontFamily="@font/playfairdisplayregular"
         android:text="Create Account"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="24sp" />
 
     <EditText
         android:id="@+id/etNewPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="205dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginBottom="239dp"
         android:ems="10"
+        android:fontFamily="@font/playfairdisplayregular"
         android:hint="Password"
         android:inputType="textPassword" />
 
@@ -67,9 +78,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="255dp"
+
         android:ems="10"
+        android:fontFamily="@font/playfairdisplayregular"
         android:hint="Email"
         android:inputType="textEmailAddress" />
 
@@ -79,8 +93,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="58dp"
-        android:text="Sign Up" />
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="164dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/cyan_dark"
+        android:fontFamily="@font/playfairdisplayblack"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
 </RelativeLayout>
