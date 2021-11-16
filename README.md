@@ -18,7 +18,7 @@ Our app will help our users by making it easier to become more informed on topic
 
 Here's a walkthrough of implemented user stories:
 
-<img src='Bite.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='Bite2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -48,9 +48,8 @@ Scope: This app aims to become global! Being able to search and find events from
 - [x] User can register for an account
 - [x] User can log in
 - [x] User can see different meals
-* User can create/edit profile
-* Get detailed view of each meals which inclides recipe and information
-* Detail view of the recipe when clicked
+- [x] User can select different fragments like home, profile, favorites and search
+- [x] User can see a detailed view of the recipe when clicked
 
 **Optional Nice-to-have Stories**
 * User can save meals into favorites

@@ -1,61 +1,55 @@
 package com.osmany.healthybites;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 
 import android.os.Bundle;
-import android.util.Log;
+import android.view.MenuItem;
 
-import com.osmany.healthybites.adapters.RecipeAdapter;
-import com.osmany.healthybites.data.clients.RetrofitClient;
-import com.osmany.healthybites.data.models.JsonPlaceHolderApi;
-import com.osmany.healthybites.data.models.Recipe;
-import com.osmany.healthybites.data.models.RecipeList;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 public class MainActivity extends AppCompatActivity {
-    String baseUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/";
-    RecyclerView recyclerView;
     String TAG = "MainActivity";
+    final FragmentManager fragmentManager = getSupportFragmentManager();
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = findViewById(R.id.rvRecipeList);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        JsonPlaceHolderApi jsonPlaceHolderApi = RetrofitClient.getClient(baseUrl).create(JsonPlaceHolderApi.class);
-
-        Call<RecipeList> call = jsonPlaceHolderApi.getRecipies();
-        call.enqueue(new Callback<RecipeList>() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onResponse(Call<RecipeList> call, Response<RecipeList> response) {
-                if (!response.isSuccessful()) {
-                    Log.e(TAG , "Response code: " + response.code());
-                    return ;
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                Fragment fragment;
+                switch (item.getItemId()) {
+                    case R.id.action_home:
+                    default:
+                        fragment = new com.osmany.healthybites.fragments.HomeFragment();
+                        break;
+                      case R.id.action_search:
+                          fragment = new com.osmany.healthybites.fragments.SearchFragment();
+                          break;
+                      case R.id.action_favorite:
+                      fragment = new com.osmany.healthybites.fragments.FavoritesFragment();
+                          break;
+                      case R.id.action_profile:
+                      fragment = new com.osmany.healthybites.fragments.ProfileFragment();
+                      break;
                 }
-                RecipeAdapter recipeAdapter = new RecipeAdapter(MainActivity.this,response.body().getRecipe());
-                recyclerView.setAdapter(recipeAdapter);
-                recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-            }
-
-            @Override
-            public void onFailure(Call<RecipeList> call, Throwable t) {
-                Log.e(TAG,t.getMessage());
+                fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
+                return true;
             }
         });
-
-
+        // Set default selection
+        bottomNavigationView.setSelectedItemId(R.id.action_home);
     }
 
 }

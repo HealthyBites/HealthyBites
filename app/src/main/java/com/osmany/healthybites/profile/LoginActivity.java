@@ -1,4 +1,4 @@
-package com.osmany.healthybites;
+package com.osmany.healthybites.profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.osmany.healthybites.MainActivity;
+import com.osmany.healthybites.R;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -27,6 +29,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        if(ParseUser.getCurrentUser() != null){
+            openMainActivity();
+        }
 
         btLogin = findViewById(R.id.btLogin);
         etUsername = findViewById(R.id.etUsername);

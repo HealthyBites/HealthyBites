@@ -1,4 +1,4 @@
-package com.osmany.healthybites;
+package com.osmany.healthybites.profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.osmany.healthybites.MainActivity;
+import com.osmany.healthybites.R;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
@@ -22,7 +24,8 @@ public class ProfileCreationActivity extends AppCompatActivity {
     private EditText etNewUsername;
     private EditText etNewPassword;
     private EditText etNewEmail;
-    
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,13 +45,10 @@ public class ProfileCreationActivity extends AppCompatActivity {
                 String email = etNewEmail.getText().toString();
                 String password = etNewPassword.getText().toString();
                 signupUser(username, email ,password);
-                openLoginActivity(); 
+                openMainActivity();
             }
         });
     }
-
-
-
 
     private void signupUser(String username, String email,String password) {
         // Create the ParseUser
@@ -60,7 +60,7 @@ public class ProfileCreationActivity extends AppCompatActivity {
         user.signUpInBackground(new SignUpCallback() {
             public void done(ParseException e) {
                 if (e == null) {
-                    openLoginActivity();
+                    openMainActivity();
                     Toast.makeText(ProfileCreationActivity.this, "Successful Sign Up!", Toast.LENGTH_SHORT).show();
                 } else {
                     Log.e(TAG, "Issue with signup", e);
@@ -70,8 +70,8 @@ public class ProfileCreationActivity extends AppCompatActivity {
         });
     }
 
-    private void openLoginActivity() {
-        Intent intent = new Intent(this, LoginActivity.class);
+    private void openMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }
