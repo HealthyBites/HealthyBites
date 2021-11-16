@@ -24,7 +24,8 @@ public class ProfileCreationActivity extends AppCompatActivity {
     private EditText etNewUsername;
     private EditText etNewPassword;
     private EditText etNewEmail;
-    
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
