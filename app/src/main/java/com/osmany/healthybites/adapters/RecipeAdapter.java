@@ -22,9 +22,9 @@ import java.util.List;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHolder> {
     Context context;
-    List<Recipe> recipeList ;
+    List<Recipe> recipeList;
 
-    public RecipeAdapter(Context context, List<Recipe> recipeList){
+    public RecipeAdapter(Context context, List<Recipe> recipeList) {
         this.context = context;
         this.recipeList = recipeList;
 
@@ -53,7 +53,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
         return recipeList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView description;
         ImageView myImage;
 
