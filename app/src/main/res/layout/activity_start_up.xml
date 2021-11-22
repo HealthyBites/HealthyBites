@@ -104,7 +104,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="349dp"
         android:fontFamily="@font/playfairdisplayregular"
-        android:text="Start your path to a new diet with this simple to use healthy recipe tool"
+        android:text="Start your path to a new diet with this simple to use healthy item tool"
         android:textAlignment="center"
         android:textSize="16sp" />
 
