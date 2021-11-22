@@ -49,7 +49,7 @@ Scope: This app aims to become global! Being able to search and find events from
 - [x] User can log in
 - [x] User can see different meals
 - [x] User can select different fragments like home, profile, favorites and search
-- [x] User can see a detailed view of the recipe when clicked
+- [x] User can see a detailed view of the item when clicked
 
 **Optional Nice-to-have Stories**
 * User can save meals into favorites
@@ -110,10 +110,10 @@ Scope: This app aims to become global! Being able to search and find events from
    | ------------- | -------- | ------------|
    | objectId      | String   | unique id for the user favorites list (default field) |
    | userId        | Pointer to User| favorites list owner |
-   | nameRecipe    | String   | name of the saved recipe |
-   | image         | File     | image of the saved recipe|
-   | description   | String   | description of the recipe |
-   | ingredients   | String   | list of recipe ingredients |
+   | nameRecipe    | String   | name of the saved item |
+   | image         | File     | image of the saved item|
+   | description   | String   | description of the item |
+   | ingredients   | String   | list of item ingredients |
    | createdAt     | DateTime | date when post is created (default field) |
    | updatedAt     | DateTime | date when post is last updated (default field) |
    
@@ -137,9 +137,9 @@ Scope: This app aims to become global! Being able to search and find events from
         OkHttpClient client = new OkHttpClient();
 
 		Request request = new Request.Builder()
-		.url("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=10")
+		.url("https://spoonacular-item-food-nutrition-v1.p.rapidapi.com/recipes/random?number=10")
 		.get()
-		.addHeader("x-rapidapi-host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
+		.addHeader("x-rapidapi-host", "spoonacular-item-food-nutrition-v1.p.rapidapi.com")
 		.addHeader("x-rapidapi-key", "856832bf48msh783ac55978b7517p16fe50jsn043078a575d9")
 		.build();
 
@@ -159,7 +159,7 @@ Scope: This app aims to become global! Being able to search and find events from
      - (Update/PUT) Update amount per ingredient in the list.
 #### [OPTIONAL:] Existing API Endpoints
 ##### A Recipe - Food - Nutrition API
-- Base URL - [https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/](https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/)
+- Base URL - [https://spoonacular-item-food-nutrition-v1.p.rapidapi.com/](https://spoonacular-item-food-nutrition-v1.p.rapidapi.com/)
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------

@@ -24,7 +24,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
-    String baseUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/";
+    String baseUrl = "https://edamam-recipe-search.p.rapidapi.com/";
     RecyclerView recyclerView;
     String TAG = "HomeActivity";
 
@@ -54,6 +54,7 @@ public class HomeFragment extends Fragment {
                     Log.e(TAG , "Response code: " + response.code());
                     return ;
                 }
+
                 RecipeAdapter recipeAdapter = new RecipeAdapter(getContext(),response.body().getRecipe());
                 recyclerView.setAdapter(recipeAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
