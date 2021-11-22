@@ -12,7 +12,7 @@
     <string name="dietary_preferences">Diet:</string>
     <string name="email">Email:</string>
     <string name="age">Age:</string>
-  
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="change_email">Change Email?</string>
     <string name="add_age">Add Age?</string>
