@@ -49,14 +49,6 @@ public class EditProfileActivity extends AppCompatActivity {
         etWeight = findViewById(R.id.etWeight);
         etDiet =  findViewById(R.id.etDiet);
 
-        /*  ParseUser currentUser = new ParseUser();
-        etChangeUsername.setText(currentUser.getString("username"));
-        etChangeEmail.setText(currentUser.getEmail());
-        etAge.setText(currentUser.getString("age"));
-        etHeight.setText(currentUser.getString("height"));
-        etWeight.setText(currentUser.getString("weight"));
-        etDiet.setText(currentUser.getString("diet")); */
-
         btSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
