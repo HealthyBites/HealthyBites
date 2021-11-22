@@ -59,6 +59,7 @@
         android:layout_marginRight="25dp"
         android:justificationMode="inter_word"
         tools:text="Description"
+        android:autoLink="web"
         />
 
     <TextView

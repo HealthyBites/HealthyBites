@@ -7,8 +7,9 @@ import retrofit2.http.GET;
 import retrofit2.http.Headers;
 
 public interface JsonPlaceHolderApi {
+
     @Headers({"x-rapidapi-host:" + BuildConfig.HOST,
             "x-rapidapi-key:" + BuildConfig.KEY})
-    @GET("recipes/random?number=10")
+    @GET("search?q=healthy")
     Call<RecipeList> getRecipies();
 }
