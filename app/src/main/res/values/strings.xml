@@ -12,6 +12,15 @@
     <string name="dietary_preferences">Diet:</string>
     <string name="email">Email:</string>
     <string name="age">Age:</string>
-    <!-- TODO: Remove or change this placeholder text -->
+  
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="change_email">Change Email?</string>
+    <string name="add_age">Add Age?</string>
+    <string name="add_weight">Add Weight?</string>
+    <string name="add_height">Add Height?</string>
+    <string name="add_diet">Add Diet?</string>
+    <string name="submit">Submit</string>
+    <string name="change_username">Change Username?</string>
+
 
 </resources>
