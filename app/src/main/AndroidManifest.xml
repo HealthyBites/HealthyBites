@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.osmany.healthybites" >
+    package="com.osmany.healthybites">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-
+        android:name=".ParseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:name=".ParseApplication"
         android:supportsRtl="true"
-
-        android:theme="@style/Theme.HealthyBites" >
+        android:theme="@style/Theme.HealthyBites">
+        <activity
+            android:name=".profile.EditProfileActivity"
+            android:exported="true" />
 
         <meta-data
             android:name="com.parse.SERVER_URL"
@@ -26,6 +26,7 @@
         <meta-data
             android:name="com.parse.CLIENT_KEY"
             android:value="@string/back4app_client_key" />
+
         <activity
             android:name=".profile.LoginActivity"
             android:exported="true" />
@@ -40,7 +41,7 @@
             android:exported="true" />
         <activity
             android:name=".profile.StartUpActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

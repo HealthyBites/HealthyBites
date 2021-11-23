@@ -7,20 +7,21 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.osmany.healthybites.R;
+import com.osmany.healthybites.profile.EditProfileActivity;
 import com.osmany.healthybites.profile.LoginActivity;
 import com.parse.ParseUser;
 
-import org.w3c.dom.Text;
-
 
 public class ProfileFragment extends Fragment {
+
+    public static final String TAG = "ProfileFragment";
 
     private TextView tvLogout;
     private TextView tvEditProfile;
@@ -31,6 +32,7 @@ public class ProfileFragment extends Fragment {
     private TextView tvWeight;
     private TextView tvHeight;
     private TextView tvName;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,38 +59,46 @@ public class ProfileFragment extends Fragment {
 
         ParseUser currentUser = ParseUser.getCurrentUser();
         if(currentUser != null){
+            Log.d(TAG, "onViewCreated: " + currentUser.getUsername());
             tvName.setText(currentUser.getString("username"));
             tvEmail.setText(currentUser.getEmail());
-            if(currentUser.getString("age") == null){
-                currentUser.put("age", "Add your age?");
-                tvAge.setText(currentUser.getString("age"));
+            tvAge.setText(currentUser.getString("age"));
+            tvHeight.setText(currentUser.getString("height"));
+            tvWeight.setText(currentUser.getString("weight"));
+            tvDiet.setText(currentUser.getString("diet"));
             }
-            if (currentUser.getString("height") == null){
-                currentUser.put("height", "Add your height?");
-                tvHeight.setText(currentUser.getString("height"));
-            }
-            if(currentUser.getString("weight") == null){
-                currentUser.put("weight", "Add your weight?");
-                tvWeight.setText(currentUser.getString("weight"));
-            }
-            if(currentUser.getString("diet") == null){
-                currentUser.put("diet", "Add your diet preferences?");
-                tvDiet.setText(currentUser.getString("diet"));
-            }
-                tvAge.setText(currentUser.getString("age"));
-                tvHeight.setText(currentUser.getString("height"));
-                tvWeight.setText(currentUser.getString("weight"));
-                tvDiet.setText(currentUser.getString("diet"));
+        if(currentUser.getString("age") == null){
+            currentUser.put("age", "Add your age?");
+            tvAge.setText(currentUser.getString("age"));
+        }
+        if (currentUser.getString("height") == null){
+            currentUser.put("height", "Add your height?");
+            tvHeight.setText(currentUser.getString("height"));
+        }
+        if(currentUser.getString("weight") == null){
+            currentUser.put("weight", "Add your weight?");
+            tvWeight.setText(currentUser.getString("weight"));
+        }
+        if(currentUser.getString("diet") == null){
+            currentUser.put("diet", "Add your diet preferences?");
+            tvDiet.setText(currentUser.getString("diet"));
         }
 
         tvLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ParseUser.logOut();
-                ParseUser currentUser = ParseUser.getCurrentUser();
                 if(ParseUser.getCurrentUser() == null){
                     goLoginActivity();
                 }
+            }
+        });
+
+
+        tvEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goEditProfileActivity();
             }
         });
     }
@@ -98,4 +108,11 @@ public class ProfileFragment extends Fragment {
         startActivity(i);
         getActivity().onBackPressed();
     }
+
+    private  void goEditProfileActivity(){
+        Intent i = new Intent(getContext(), EditProfileActivity.class);
+        startActivity(i);
+    }
+
+
 }
