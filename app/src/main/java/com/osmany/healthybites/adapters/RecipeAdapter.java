@@ -20,13 +20,14 @@ import com.osmany.healthybites.data.models.Recipe;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHolder> {
     Context context;
-
+    int ITEM_COUNT = 10;
     List<Recipe> recipeList;
     ArrayList<String> ingredientList;
 
@@ -56,13 +57,13 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
 
 
 
-        Recipe recipe = recipeList.get(position);
+        Recipe recipe = recipeList.get(new Random().nextInt(100));
         holder.bind(recipe);
     }
 
     @Override
     public int getItemCount() {
-        return recipeList.size();
+        return ITEM_COUNT;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
