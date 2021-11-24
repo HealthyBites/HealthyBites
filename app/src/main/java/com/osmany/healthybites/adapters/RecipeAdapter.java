@@ -99,16 +99,15 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
                 if(ibFavorites.getTag() == "1") {
                     ibFavorites.setImageResource(filledStar);
                     ibFavorites.setTag("2");
+                    ParseUser parseUser = ParseUser.getCurrentUser();
+                    ParseObject favorites = new ParseObject("Favorites");
+                    favorites.put("recipeName", recipe.getItem().getTitle());
+                    favorites.put("userId", parseUser);
+                    favorites.saveInBackground();
                 }else{
                     ibFavorites.setImageResource(emptyStar);
                     ibFavorites.setTag("1");
                 }
-
-                ParseUser parseUser = ParseUser.getCurrentUser();
-                ParseObject favorites = new ParseObject("Favorites");
-                favorites.put("recipeName", recipe.getItem().getTitle());
-                favorites.put("userId", parseUser);
-                favorites.saveInBackground();
             }
         };
 
