@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,6 +28,7 @@ public class HomeFragment extends Fragment {
     String baseUrl = "https://edamam-recipe-search.p.rapidapi.com/";
     RecyclerView recyclerView;
     String TAG = "HomeActivity";
+    ImageButton ibFavorites;
 
     public HomeFragment(){
         // Required empty public constructor
@@ -66,5 +68,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
+
     }
+
 }
