@@ -7,12 +7,17 @@ import com.parse.ParseUser;
 @ParseClassName("GroceryList")
 public class GroceryList extends ParseObject {
 
-    //public GroceryList(){}
+
 
     public static final String KEY_INGREDIENT = "ingredient";
     public static final String KEY_QUANTITY = "quantity";
     public static final String KEY_USER = "userId";
     public static final String KEY_CREATED_KEY = "createdAt";
+
+    public GroceryList(ParseUser user, String ingredient) {
+         //= type;
+        //this.value = value;
+    }
 
     public String getIngredient(){
         return  getString(KEY_INGREDIENT);

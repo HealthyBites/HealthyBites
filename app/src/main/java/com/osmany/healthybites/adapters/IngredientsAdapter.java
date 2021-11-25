@@ -88,68 +88,22 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
                 @Override
                 public void onClick(View v) {
 
-                    String ingredient = tvIngredient.getText().toString();
                     ParseUser currentUser = ParseUser.getCurrentUser();
-                    //saveIngredient(currentUser, ingredient);
-
-
-                    // Register your parse models
-                    ParseObject.registerSubclass(GroceryList.class);
-
-                    //ParseObject groceryList = ParseObject.create("GroceryList");
-                    GroceryList gList = new GroceryList();
-                    //groceryList.setIngredient(ingredient);
-                    //groceryList.put("ingredient", ingredient);
-                    //post.setImage(new ParseFile(photoFile));
-                    //groceryList.setUser(currentUser);
-                    //groceryList.put("userId", currentUser);
-
-                    //ParseUser currentUser = ParseUser.getCurrentUser();
-                    ParseObject groceryList = ParseObject.create(GroceryList.class);
-
-                    //ParseObject groceryList = new ParseObject("GroceryList");
-                    //GroceryList groceryList = new GroceryList();
-
-                    groceryList.saveInBackground(new SaveCallback() {
-                        @Override
-                        public void done(ParseException e) {
-                            if(e == null){
-                                //Toast.makeText(EditProfileActivity.this, "Profile Updated..", Toast.LENGTH_SHORT).show();
-                                //currentUser.put("age", age);
-                                //currentUser.put("weight", weight);
-                                //currentUser.put("height" , height);
-                                //currentUser.put("diet", diet);
-                                //Log.i(TAG, "Data: " + " " + age + " " + weight + " " +height + " " +diet);
-                                //openMainActivity();
-                                //currentUser.put("ingredient", ingredient);
-                                //gList.setIngredient(ingredient);
-                                //groceryList.put("ingredient", ingredient);
-                                //groceryList.put("userId", currentUser);
-
-                                gList.setIngredient(ingredient);
-                                gList.setUser(currentUser);
-
-                                btnAddToList.setClickable(false);
-                            }else{
-                                //Log.i(TAG,"Save in background " + e.getLocalizedMessage());
-                                //Toast.makeText(EditProfileActivity.this, "Failed to update profile " + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-
-
-                    //btnAddToList.setClickable(false);
+                    saveIngredient(currentUser, ingredient);
+                    Toast.makeText(context, "Ingredient saved successfully!", Toast.LENGTH_SHORT).show();
                 }
             });
         }
     }
 
     private void saveIngredient(ParseUser currentUser, String ingredient) {
-
-        GroceryList groceryList = new GroceryList();
-        groceryList.setIngredient(ingredient);
+        ParseObject groceryList = new ParseObject("GroceryList");
+        //GroceryList groceryList = new GroceryList(currentUser, ingredient);
+        //groceryList.setIngredient(ingredient);
+        groceryList.put("ingredient", ingredient);
         //post.setImage(new ParseFile(photoFile));
-        groceryList.setUser(currentUser);
-
+        //groceryList.setUser(currentUser);
+        groceryList.put("userId", currentUser);
+        groceryList.saveInBackground();
     }
 }
