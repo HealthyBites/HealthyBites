@@ -8,16 +8,14 @@
 
     <ImageView
         android:id="@+id/ivRecipeImage"
-        android:layout_width="406dp"
-        android:layout_height="296dp"
-        android:layout_alignParentStart="true"
+        android:layout_height="270dp"
+        android:layout_width="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        />
 
     <TextView
         android:id="@+id/tvRecipeTitle"
@@ -28,4 +26,20 @@
         android:textAlignment="center"
         android:textSize="24sp"
         tools:text="Description" />
+
+    <ImageButton
+        android:id="@+id/ibStar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ivRecipeImage"
+        android:layout_alignEnd="@+id/ivRecipeImage"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="80dp"
+        android:background="#00FFFFFF"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:src="@android:drawable/btn_star" />
+
+
+
 </RelativeLayout>
