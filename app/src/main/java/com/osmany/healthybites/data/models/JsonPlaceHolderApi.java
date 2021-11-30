@@ -12,4 +12,5 @@ public interface JsonPlaceHolderApi {
             "x-rapidapi-key:" + BuildConfig.KEY})
     @GET("search?q=healthy&from=0&to=100")
     Call<RecipeList> getRecipies();
+    //search?q=healthy
 }

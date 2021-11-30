@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -8,13 +9,12 @@
     android:fillViewport="false">
 
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="15dp"
     android:paddingRight="15dp"
+    android:gravity="center"
     tools:context=".RecipeDetailActivity">
 
 
@@ -70,6 +70,13 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="25dp"
         android:text="1.Ingredients\n2.Ingredients\n3.Ingredients\n4.Ingredients\n5.Ingredients\n6.Ingredients"/>
+
+    <Button
+        android:id="@+id/btnIngredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Save Ingredients" />
 
 </LinearLayout>
 
