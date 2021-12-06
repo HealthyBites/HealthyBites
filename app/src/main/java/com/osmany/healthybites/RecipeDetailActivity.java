@@ -1,7 +1,11 @@
 package com.osmany.healthybites;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -9,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
@@ -19,8 +24,10 @@ public class RecipeDetailActivity extends AppCompatActivity {
     ImageView myImage;
     TextView summary;
     TextView ingredients;
-    List<String> ingredientList;
+    ArrayList<String> ingredientList;
     String ingredientString = "";
+
+    Button saveIngredients;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +38,8 @@ public class RecipeDetailActivity extends AppCompatActivity {
         myImage = findViewById(R.id.ivRecipeImage);
         summary = findViewById(R.id.tvRecipeSummary);
         ingredients = findViewById(R.id.tvRecipeIngredients);
+
+        saveIngredients = findViewById(R.id.btnIngredients);
 
         title.setText(getIntent().getStringExtra("title"));
         Glide
@@ -49,5 +58,21 @@ public class RecipeDetailActivity extends AppCompatActivity {
         }
         ingredients.setText(ingredientString);
 
+        saveIngredients.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goSaveToListActivity();
+            }
+        });
+
+    }
+
+    private void goSaveToListActivity() {
+        Intent i = new Intent(this, SaveToListActivity.class);
+
+        i.putStringArrayListExtra("ingredientList", ingredientList);
+
+        startActivity(i);
+        //finish();
     }
 }

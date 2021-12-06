@@ -32,7 +32,7 @@ public class EditProfileActivity extends AppCompatActivity {
     private EditText etHeight;
     private EditText etDiet;
 
-    private String age, weight, height, diet, objectID;
+    private String age, weight, height, diet, email;
 
 
     @Override
@@ -69,6 +69,7 @@ public class EditProfileActivity extends AppCompatActivity {
                             currentUser.put("weight", weight);
                             currentUser.put("height" , height);
                             currentUser.put("diet", diet);
+
                             Log.i(TAG, "Data: " + " " + age + " " + weight + " " +height + " " +diet);
                             openMainActivity();
                         }else{

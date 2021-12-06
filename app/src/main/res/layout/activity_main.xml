@@ -19,9 +19,11 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_alignParentBottom="true"
+
         android:background="@drawable/gradiant_background"
         app:itemIconTint="@color/icon_color"
         app:itemTextColor="@color/icon_color"
+
         app:menu="@menu/menu_bottom_navigation" />
 
 </RelativeLayout>

@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
                       case R.id.action_favorite:
                       fragment = new com.osmany.healthybites.fragments.FavoritesFragment();
                           break;
-//                      case R.id.action_profile:
-////                      fragment = new com.osmany.healthybites.fragments.ProfileFragment();
-//                      break;
+                      case R.id.action_profile:
+                      fragment = new com.osmany.healthybites.fragments.ProfileFragment();
+                      break;
                 }
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
                 return true;

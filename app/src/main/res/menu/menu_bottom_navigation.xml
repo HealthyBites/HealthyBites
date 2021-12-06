@@ -18,6 +18,11 @@
         android:title="Favorite"
         app:showAsAction="always" />
     <item
+        android:id="@+id/action_groceryList"
+        android:icon="@android:drawable/ic_dialog_dialer"
+        android:title="Grocery List"
+        app:showAsAction="always" />
+    <item
         android:id="@+id/action_profile"
         android:icon="@drawable/ic_action_profile"
         android:title="Profile"
