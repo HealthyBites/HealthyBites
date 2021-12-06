@@ -3,9 +3,14 @@ package com.osmany.healthybites.fragments;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.SearchView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,6 +34,7 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     String TAG = "HomeActivity";
     ImageButton ibFavorites;
+    RecipeAdapter recipeAdapter;
 
     public HomeFragment(){
         // Required empty public constructor
@@ -48,7 +54,7 @@ public class HomeFragment extends Fragment {
 
         JsonPlaceHolderApi jsonPlaceHolderApi = RetrofitClient.getClient(baseUrl).create(JsonPlaceHolderApi.class);
 
-        Call<RecipeList> call = jsonPlaceHolderApi.getRecipies();
+        Call<RecipeList> call = jsonPlaceHolderApi.getRecipes();
         call.enqueue(new Callback<RecipeList>() {
             @Override
             public void onResponse(Call<RecipeList> call, Response<RecipeList> response) {
@@ -57,7 +63,7 @@ public class HomeFragment extends Fragment {
                     return ;
                 }
 
-                RecipeAdapter recipeAdapter = new RecipeAdapter(getContext(),response.body().getRecipe());
+                recipeAdapter = new RecipeAdapter(getContext(),response.body().getRecipe());
                 recyclerView.setAdapter(recipeAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
             }
@@ -70,5 +76,7 @@ public class HomeFragment extends Fragment {
 
 
     }
+
+
 
 }

@@ -21,6 +21,8 @@
     <string name="add_diet">Add Diet?</string>
     <string name="submit">Submit</string>
     <string name="change_username">Change Username?</string>
+    <string name="search">Search</string>
+    <string name="search_recipes">Search Recipes</string>
 
 
 </resources>

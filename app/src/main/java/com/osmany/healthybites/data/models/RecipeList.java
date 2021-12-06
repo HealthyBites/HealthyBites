@@ -14,7 +14,7 @@ public class RecipeList {
         return recipes;
     }
 
-    public void setRecipie(List<Recipe> item) {
+    public void setRecipe(List<Recipe> item) {
         this.recipes = item;
     }
 

@@ -40,6 +40,4 @@
         android:scaleY="2"
         android:src="@android:drawable/btn_star" />
 
-
-
 </RelativeLayout>
