@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,25 +15,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.osmany.healthybites.GroceryList;
 import com.osmany.healthybites.R;
 import com.osmany.healthybites.adapters.GroceryListAdapter;
-import com.osmany.healthybites.data.models.Recipe;
 import com.parse.FindCallback;
-import com.parse.GetCallback;
 import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.parse.ParseUser;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
 public class GroceryListFragment extends Fragment {
 
-    public static final String TAG = "GroceryListFragment";
     protected RecyclerView rvGroceryList;
     protected GroceryListAdapter adapter;
-    protected List<String> allIngredients;
+    protected List<GroceryList> allIngredients;
 
     public GroceryListFragment(){
         // Required empty public constructor
@@ -54,8 +46,13 @@ public class GroceryListFragment extends Fragment {
 
         allIngredients = new ArrayList<>();
         adapter = new GroceryListAdapter(getContext(), allIngredients);
-
+        //Steps to use the recycler view:
+        //0. create layout for one row in the list
+        //1. create the adapter
+        //2. create the data source
+        //3. set the adapter on the recycler view
         rvGroceryList.setAdapter(adapter);
+        //4. set the layout manager on the recycler view
         rvGroceryList.setLayoutManager(new LinearLayoutManager(getContext()));
 
         queryIngredients();
@@ -63,24 +60,28 @@ public class GroceryListFragment extends Fragment {
     }
 
     protected void queryIngredients() {
+        ParseQuery<GroceryList> query = ParseQuery.getQuery(GroceryList.class);
+        query.include(GroceryList.KEY_USER);
 
-        ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("GroceryList");
-        query.whereEqualTo(GroceryList.KEY_USER, ParseUser.getCurrentUser());
+        query.setLimit(20);
         query.addDescendingOrder(GroceryList.KEY_CREATED_KEY);
-        query.findInBackground(new FindCallback<ParseObject>() {
+        query.findInBackground(new FindCallback<GroceryList>() {
             @Override
-            public void done(List<ParseObject> objects, ParseException e) {
-
-                List<String> arraylist = new ArrayList<>();
-
-                for(ParseObject object: objects){
-                    arraylist.add(object.get("ingredient").toString());
+            public void done(List<GroceryList> groceryList, ParseException e) {
+                if(e != null){
+                    //Log.e(TAG, "Issue with getting posts", e);
+                    return;
                 }
-                allIngredients.addAll(arraylist);
+                for(GroceryList ingredient : groceryList){
+                    //Log.i(TAG, "Post: " + post.getDescription() + ", username: " + post.getUser());
+                }
+                adapter.clear();
+                allIngredients.addAll(groceryList);
                 adapter.notifyDataSetChanged();
             }
         });
 
     }
+
 
 }

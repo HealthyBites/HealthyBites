@@ -35,11 +35,49 @@ public class SaveToListActivity extends AppCompatActivity {
 
     public SaveToListActivity() {};
 
+    /*
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.activity_save_to_list, container, false);
+    }
+
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        rvIngredients = view.findViewById(R.id.rvIngredientList);
+
+        ingredientList = new ArrayList<>();
+        ingredientList = getActivity().getIntent().getStringArrayListExtra("ingredientList");
+        adapter = new IngredientsAdapter(getContext(), ingredientList);
+
+        //Steps to use the recycler view:
+        //0. create layout for one row in the list
+        //1. create the adapter
+        //2. create the data source
+        //3. set the adapter on the recycler view
+        rvIngredients.setAdapter(adapter);
+        //4. set the layout manager on the recycler view
+        rvIngredients.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        //queryIngredients();
+    }
+    */
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //ingredientList = getIntent().getStringArrayListExtra("ingredientList");
         setContentView(R.layout.activity_save_to_list);
+
+        // Register your parse models
+        //ParseObject.registerSubclass(GroceryList.class);
+        // Add your initialization code here
+        //Parse.initialize(this, "0ou4FU2EEx08px1NG3YxiirZbxbtvpWtJHbD8Npl", "wlBd4PrYq7MPbTbeDhCYopQ1M7wpCccaK8KIpU7r");
+
 
         //Find the recycler view
         rvIngredients = findViewById(R.id.rvIngredientList);
@@ -48,17 +86,34 @@ public class SaveToListActivity extends AppCompatActivity {
 
         ingredientList = getIntent().getStringArrayListExtra("ingredientList");
 
+        /*
+        //String temp = "";
+        for(int i=0; i<ingredientList.size(); i++){
+            //temp = ingredientList.get(i);
+            char[] str = ingredientList.get(i).toCharArray();
+            char[] str2 = new char[str.length];
+
+            for(int j=0; j<str.length; j++){
+                while(str[j]!=','){
+                    str2[j] = str[j];
+                }
+            }
+            ingredientList.set(i, String.copyValueOf(str2));
+        }
+        */
+
         ArrayList<String> newList = new ArrayList<>();
         for(int i = 0; i < ingredientList.size(); i++)
         {
             String temp = "";
             if(ingredientList.get(i).contains(",") || ingredientList.get(i).contains("(")){
-
+                //newList.set(i, ingredientList.get(i).substring(0, ingredientList.get(i).indexOf(",")));
+                //someList.set(i, someList.get(i).replace(someString, otherString));
                 temp = ingredientList.get(i);
-
+                //temp.replaceAll(",.*", "");
                 temp = temp.split(",")[0];
                 temp = temp.split("\\(")[0];
-
+                //ingredientList.set(i, temp);
                 newList.add(temp);
             }else{
                 // If it not contains `someString`, add it as it is to newList
@@ -73,6 +128,40 @@ public class SaveToListActivity extends AppCompatActivity {
         rvIngredients.setAdapter(adapter);
 
 
+        //adapter.addAll(newList);
+
+
+
     }
+
+
+
+
+    /*
+    protected void queryIngredients() {
+        ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
+        query.include(Post.KEY_USER);
+
+        query.setLimit(20);
+        query.addDescendingOrder(Post.KEY_CREATED_KEY);
+        query.findInBackground(new FindCallback<Post>() {
+            @Override
+            public void done(List<Post> posts, ParseException e) {
+                if(e != null){
+                    Log.e(TAG, "Issue with getting posts", e);
+                    return;
+                }
+                for(Post post : posts){
+                    Log.i(TAG, "Post: " + post.getDescription() + ", username: " + post.getUser());
+                }
+                adapter.clear();
+                allPosts.addAll(posts);
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+    }
+
+     */
 
 }

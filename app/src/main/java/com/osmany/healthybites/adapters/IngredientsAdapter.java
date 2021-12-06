@@ -49,6 +49,9 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        //ArrayList<String> ingredients = ingredientList.get(position);
+        //holder.bind();
+        //tvIngredient.setText(ingredientList.get(0));
         String ingredient = ingredientList.get(position);
         holder.bind(ingredient);
     }
@@ -60,6 +63,7 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
 
     public void addAll(ArrayList<String> list) {
         ingredientList.addAll(list);
+        //notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -71,6 +75,10 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
             super(itemView);
             tvIngredient = itemView.findViewById(R.id.tvIngredient);
             btnAddToList = itemView.findViewById(R.id.btnAddToList);
+
+           // ingredientList = getIntent().getStringArrayListExtra("ingredients");
+
+            //tvIngredient.setText(ingredientList.get(0));
         }
 
         public void bind(String ingredient) {
@@ -90,9 +98,11 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
 
     private void saveIngredient(ParseUser currentUser, String ingredient) {
         ParseObject groceryList = new ParseObject("GroceryList");
-
+        //GroceryList groceryList = new GroceryList(currentUser, ingredient);
+        //groceryList.setIngredient(ingredient);
         groceryList.put("ingredient", ingredient);
-
+        //post.setImage(new ParseFile(photoFile));
+        //groceryList.setUser(currentUser);
         groceryList.put("userId", currentUser);
         groceryList.saveInBackground();
     }

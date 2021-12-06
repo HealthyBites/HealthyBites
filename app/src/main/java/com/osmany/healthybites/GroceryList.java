@@ -14,10 +14,9 @@ public class GroceryList extends ParseObject {
     public static final String KEY_USER = "userId";
     public static final String KEY_CREATED_KEY = "createdAt";
 
-    public static final String KEY_OBJECT = "objectId";
-
-    public GroceryList() {
-
+    public GroceryList(ParseUser user, String ingredient) {
+         //= type;
+        //this.value = value;
     }
 
     public String getIngredient(){

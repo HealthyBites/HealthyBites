@@ -1,41 +1,31 @@
 package com.osmany.healthybites.adapters;
 
 import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.osmany.healthybites.GroceryList;
-import com.osmany.healthybites.MainActivity;
 import com.osmany.healthybites.R;
-import com.osmany.healthybites.SaveToListActivity;
-import com.osmany.healthybites.fragments.GroceryListFragment;
-import com.parse.DeleteCallback;
-import com.parse.FindCallback;
-import com.parse.GetCallback;
-import com.parse.ParseException;
 import com.parse.ParseObject;
-import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GroceryListAdapter extends RecyclerView.Adapter<GroceryListAdapter.ViewHolderGL> {
 
     Context context;
-    List<String> ingredients;
+    List<GroceryList> ingredientList;
 
-    public GroceryListAdapter(Context context, List<String> ingredients) {
+    public GroceryListAdapter(Context context, List<GroceryList> ingredientList) {
         this.context = context;
-        this.ingredients = ingredients;
+        this.ingredientList = ingredientList;
 
     }
 
@@ -50,31 +40,26 @@ public class GroceryListAdapter extends RecyclerView.Adapter<GroceryListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderGL holder, int position) {
-        String ingredient = ingredients.get(position);
-        holder.bind(ingredient);
+        GroceryList groceryList = ingredientList.get(position);
+        holder.bind(groceryList);
     }
 
     @Override
     public int getItemCount() {
-        return ingredients.size();
+        return ingredientList.size();
     }
 
     public void clear() {
-        ingredients.clear();
+        ingredientList.clear();
         notifyDataSetChanged();
     }
 
-    public void addAll(List<String> list) {
-        ingredients.addAll(list);
+    public void addAll(List<GroceryList> list) {
+        ingredientList.addAll(list);
         notifyDataSetChanged();
     }
 
-    public void updateAll(List<GroceryList> parseGroceryList){
-        //this.ingredients = parseGroceryList;
-        notifyDataSetChanged();
-    }
-
-    class ViewHolderGL extends RecyclerView.ViewHolder {
+    public class ViewHolderGL extends RecyclerView.ViewHolder {
 
         private TextView tvIngredientGL;
         private Button btnDeleteFromList;
@@ -84,52 +69,25 @@ public class GroceryListAdapter extends RecyclerView.Adapter<GroceryListAdapter.
             tvIngredientGL = itemView.findViewById(R.id.tvIngredientGL);
             btnDeleteFromList = itemView.findViewById(R.id.btnDeleteFromList);
 
+            // ingredientList = getIntent().getStringArrayListExtra("ingredients");
+
+            //tvIngredient.setText(ingredientList.get(0));
         }
 
 
-        public void bind(String ingredient) {
-
-            tvIngredientGL.setText(ingredient);
+        public void bind(GroceryList ingredients) {
+            tvIngredientGL.setText(ingredients.getIngredient());
 
             btnDeleteFromList.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("GroceryList");
-                    query.whereEqualTo(GroceryList.KEY_USER, ParseUser.getCurrentUser());
-                    query.whereEqualTo("ingredient", ingredient);
-                    query.findInBackground(new FindCallback<ParseObject>() {
-                        @Override
-                        public void done(List<ParseObject> objects, ParseException e) {
-                            String objectID = "";
-                            for(ParseObject object: objects){
-                                objectID = object.getObjectId();
-                            }
-
-                            ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("GroceryList");
-                            query.getInBackground(objectID, new GetCallback<ParseObject>() {
-                                @Override
-                                public void done(ParseObject object, ParseException e) {
-                                    object.deleteInBackground();
-                                    notifyDataSetChanged();
-
-                                    Toast.makeText(context, "Ingredient deleted successfully!", Toast.LENGTH_SHORT).show();
-
-                                }
-                            });
-                        }
-                    });
 
                 }
             });
-
-
-
         }
 
 
     }
-
-
 
 }
