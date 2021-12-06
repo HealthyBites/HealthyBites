@@ -1,154 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradiant_background"
-    tools:context=".profile.EditProfileActivity"
-    tools:layout_editor_absoluteY="25dp">
+    tools:context=".profile.EditProfileActivity">
 
 
     <ImageView
         android:id="@+id/ivAddImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="142dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="62dp"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="63dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <EditText
         android:id="@+id/etChangeEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="86dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="211dp"
         android:ems="10"
-        android:fontFamily="@font/playfairdisplayregular"
         android:hint="@string/change_email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.159"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etChangeUsername" />
+        tools:layout_editor_absoluteY="240dp" />
 
     <EditText
         android:id="@+id/etAge"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="84dp"
+        android:layout_width="111dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="329dp"
         android:ems="10"
-        android:fontFamily="@font/playfairdisplayregular"
         android:hint="@string/add_age"
         android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/editTextDate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.159"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etHeight" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etWeight"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="84dp"
+        android:layout_width="119dp"
+        android:layout_height="57dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="217dp"
+        android:layout_marginBottom="277dp"
         android:ems="10"
-        android:fontFamily="@font/playfairdisplayregular"
         android:hint="@string/add_weight"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/etHeight"
-        app:layout_constraintTop_toBottomOf="@+id/etChangeEmail" />
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="370dp" />
 
     <EditText
         android:id="@+id/etHeight"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="22dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="104dp"
+        android:layout_marginBottom="230dp"
         android:ems="10"
-        android:fontFamily="@font/playfairdisplayregular"
         android:hint="@string/add_height"
         android:inputType="numberDecimal"
-        app:layout_constraintEnd_toStartOf="@+id/etWeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.159"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etChangeEmail" />
+        tools:layout_editor_absoluteY="435dp" />
 
     <EditText
         android:id="@+id/etDiet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="86dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="106dp"
+        android:layout_marginBottom="174dp"
         android:ems="10"
-        android:fontFamily="@font/playfairdisplayregular"
         android:hint="@string/add_diet"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etAge" />
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="503dp" />
 
     <Button
         android:id="@+id/btSubmit"
-        android:layout_width="144dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="133dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="134dp"
-        android:background="@drawable/rounded_corners"
-        android:fontFamily="@font/playfairdisplayblack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="183dp"
+        android:layout_marginBottom="89dp"
         android:text="@string/submit"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDiet" />
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="574dp" />
 
     <EditText
         android:id="@+id/etChangeUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="86dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="267dp"
         android:ems="10"
-        android:fontFamily="@font/playfairdisplayregular"
         android:hint="@string/change_username"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Profile" />
-
-    <TextView
-        android:id="@+id/Profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="168dp"
-        android:fontFamily="@font/playfairdisplaybold"
-        android:text="Profile"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivAddImage" />
-
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="84dp"
-        android:ems="10"
-        android:fontFamily="@font/playfairdisplayregular"
-        android:hint="Add Birthday"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/etAge"
-        app:layout_constraintTop_toBottomOf="@+id/etWeight" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:inputType="textPersonName" />
+</RelativeLayout>
