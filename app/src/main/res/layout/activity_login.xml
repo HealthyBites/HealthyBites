@@ -1,97 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout2"
+    android:background="@drawable/gradiant_background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     tools:context=".profile.LoginActivity">
 
   <TextView
       android:id="@+id/tvGreeting"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_alignParentStart="true"
-      android:layout_alignParentTop="true"
-      android:layout_centerHorizontal="true"
-      android:layout_marginStart="152dp"
-      android:layout_marginTop="148dp"
+      android:layout_marginStart="156dp"
+      android:layout_marginTop="136dp"
+      android:layout_marginEnd="156dp"
       android:fontFamily="@font/playfairdisplaybold"
-      android:text="Hello"
+      android:text="@string/hello"
       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
       android:textSize="40sp"
-      tools:layout_editor_absoluteX="167dp"
-      tools:layout_editor_absoluteY="75dp" />
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
 
   <TextView
       android:id="@+id/tvSignMessage"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_alignParentStart="true"
-      android:layout_alignParentTop="true"
-      android:layout_centerHorizontal="true"
-      android:layout_marginStart="119dp"
-      android:layout_marginTop="210dp"
+      android:layout_marginStart="123dp"
+      android:layout_marginTop="30dp"
+      android:layout_marginEnd="123dp"
       android:fontFamily="@font/playfairdisplayregular"
-      android:text="Sign in to your account"
-      android:textSize="16sp" />
+      android:text="@string/sign_in_to_your_account"
+      android:textSize="16sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvGreeting"
+      tools:ignore="TextContrastCheck,TextContrastCheck" />
 
   <EditText
       android:id="@+id/etUsername"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_alignParentStart="true"
-      android:layout_alignParentTop="true"
-      android:layout_centerHorizontal="true"
       android:layout_marginStart="81dp"
-      android:layout_marginTop="253dp"
+      android:layout_marginTop="17dp"
+      android:layout_marginEnd="90dp"
       android:ems="10"
       android:fontFamily="@font/playfairdisplayregular"
-      android:hint="Username"
-      android:inputType="textPersonName" />
+      android:hint="@string/username"
+      android:inputType="textPersonName"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvSignMessage"
+      tools:ignore="TouchTargetSizeCheck"
+      android:autofillHints="" />
 
   <EditText
       android:id="@+id/etPassword"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_alignParentStart="true"
-      android:layout_alignParentTop="true"
-      android:layout_centerHorizontal="true"
       android:layout_marginStart="81dp"
-      android:layout_marginTop="317dp"
-      android:ems="10"
 
+      android:layout_marginTop="12dp"
+      android:layout_marginEnd="90dp"
+      android:autofillHints=""
+      android:ems="10"
       android:fontFamily="@font/playfairdisplayregular"
-      android:hint="Password"
-      android:inputType="textPassword" />
+      android:hint="@string/password"
+      android:inputType="textPassword"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/etUsername"
+      tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
 
   <Button
       android:id="@+id/btLogin"
       android:layout_width="200dp"
       android:layout_height="wrap_content"
-      android:layout_alignParentEnd="true"
-      android:layout_alignParentBottom="true"
-      android:layout_centerInParent="true"
+      android:layout_centerHorizontal="true"
+      android:layout_centerVertical="true"
+      android:layout_marginStart="105dp"
+      android:layout_marginTop="29dp"
       android:layout_marginEnd="106dp"
-      android:layout_marginBottom="303dp"
       android:background="@drawable/rounded_corners"
-      android:backgroundTint="@color/cyan_dark"
       android:fontFamily="@font/playfairdisplayblack"
-      android:text="Sign In"
+      android:text="@string/sign_in"
       android:textColor="@color/white"
-      android:textSize="16sp" />
+      android:textSize="16sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/etPassword"
+      tools:ignore="TextContrastCheck,TextContrastCheck" />
 
   <TextView
       android:id="@+id/textView"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_alignParentTop="true"
-      android:layout_alignParentEnd="true"
-      android:layout_centerVertical="true"
-      android:layout_marginTop="362dp"
-      android:layout_marginEnd="94dp"
+      android:layout_marginStart="136dp"
+      android:layout_marginTop="5dp"
+      android:layout_marginEnd="137dp"
       android:fontFamily="@font/playfairdisplayregular"
-      android:text="Forgot your password"
+      android:text="@string/forgot_your_password"
       android:textAlignment="viewEnd"
-      android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-</RelativeLayout>
+      android:textAppearance="@style/TextAppearance.AppCompat.Small"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/btLogin" />
+</androidx.constraintlayout.widget.ConstraintLayout>
