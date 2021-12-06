@@ -7,10 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
+    <color name="gradiant">#61e6c4</color>
+    <color name="button">#b2fdff</color>
     <color name="cyan_light">#ccfffe</color>
     <color name="cyan_dark">#89e8df</color>
-
+    <color name="buttonText">#3fc8ff</color>
     <color name="gray">#6E6A6A</color>
+    <color name="button_color">#3fc8ff</color>
+    <color name="icon_color">#023e8a</color>
 
 </resources>

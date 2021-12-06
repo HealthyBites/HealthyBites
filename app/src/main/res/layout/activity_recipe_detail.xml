@@ -2,9 +2,10 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
     android:padding="10dp"
+    android:background="@drawable/gradiant_background"
     android:fillViewport="false">
 
 <LinearLayout
@@ -39,14 +40,16 @@
         android:layout_height="296dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/playfairdisplaybold"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ivRecipeImage"
         android:layout_marginTop="5dp"
-        android:text="Description/Ingredients"
+        android:text="Ingredients"
+        android:fontFamily="@font/playfairdisplaybold"
         android:textAlignment="center"
         android:textSize="30sp" />
 
@@ -69,6 +72,8 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="25dp"
+        android:fontFamily="@font/playfairdisplayregular"
+        android:textSize="17sp"
         android:text="1.Ingredients\n2.Ingredients\n3.Ingredients\n4.Ingredients\n5.Ingredients\n6.Ingredients"/>
 
 </LinearLayout>
