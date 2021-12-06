@@ -25,8 +25,7 @@ public class EditProfileActivity extends AppCompatActivity {
     public static final String TAG = "EditProfileActivity";
 
     private Button btSubmit;
-    private EditText etChangeEmail;
-    private EditText etChangeUsername;
+   
     private EditText etAge;
     private EditText etWeight;
     private EditText etHeight;
@@ -42,8 +41,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
         btSubmit =  findViewById(R.id.btSubmit);
 
-        etChangeEmail =  findViewById(R.id.etChangeEmail);
-        etChangeUsername =  findViewById(R.id.etChangeUsername);
+
         etAge =  findViewById(R.id.etAge);
         etHeight =  findViewById(R.id.etHeight);
         etWeight = findViewById(R.id.etWeight);
