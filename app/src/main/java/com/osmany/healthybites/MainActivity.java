@@ -38,11 +38,8 @@ public class MainActivity extends AppCompatActivity {
                           fragment = new com.osmany.healthybites.fragments.SearchFragment();
                           break;
                       case R.id.action_favorite:
-                          fragment = new com.osmany.healthybites.fragments.FavoritesFragment();
+                      fragment = new com.osmany.healthybites.fragments.FavoritesFragment();
                           break;
-                      case R.id.action_groceryList:
-                           fragment = new com.osmany.healthybites.fragments.GroceryListFragment();
-                           break;
                       case R.id.action_profile:
                       fragment = new com.osmany.healthybites.fragments.ProfileFragment();
                       break;
