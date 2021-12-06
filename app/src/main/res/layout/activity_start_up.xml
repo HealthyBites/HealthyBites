@@ -7,7 +7,7 @@
 
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".StartUpActivity">
+    tools:context=".profile.StartUpActivity">
 
     <TextView
         android:id="@+id/tvAppName"
